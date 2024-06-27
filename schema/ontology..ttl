@@ -1,0 +1,153 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix orkg: <http://orkg.org/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrc: <http://swrc.ontoware.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+orkg:employs a owl:ObjectProperty ;
+    rdfs:label "employs" ;
+    rdfs:domain orkg:ResearchContribution ;
+    rdfs:range orkg:ResearchMethod .
+
+orkg:hasResearchContribution a owl:ObjectProperty ;
+    rdfs:label "hasResearchContribution" ;
+    rdfs:comment "The research contribution of the paper." ;
+    rdfs:domain orkg:Paper ;
+    rdfs:range orkg:ResearchContribution ;
+    owl:withRestrictions orkg:ResearchContribution .
+
+orkg:hasResearchField a owl:ObjectProperty ;
+    rdfs:label "hasResearchField" ;
+    rdfs:comment "The research field of the paper." ;
+    rdfs:domain orkg:Paper ;
+    rdfs:range orkg:ResearchField .
+
+dcterms:issued a owl:DatatypeProperty ;
+    rdfs:label "issued" ;
+    rdfs:comment "Date of formal issuance (e.g., publication) of the resource." ;
+    rdfs:domain bibo:Document ;
+    rdfs:range xsd:date .
+
+dcterms:title a owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    rdfs:comment "A name given to the resource." ;
+    rdfs:domain bibo:Document ;
+    rdfs:range rdfs:Literal .
+
+bibo:abstract a owl:DatatypeProperty ;
+    rdfs:label "abstract" ;
+    rdfs:comment "Abstract of a document." ;
+    rdfs:domain bibo:Document ;
+    rdfs:range rdfs:Literal .
+
+bibo:doi a owl:DatatypeProperty ;
+    rdfs:label "DOI" ;
+    rdfs:comment "Digital Object Identifier for a document." ;
+    rdfs:domain bibo:Document ;
+    rdfs:range rdfs:Literal .
+
+bibo:url a owl:DatatypeProperty ;
+    rdfs:label "URL" ;
+    rdfs:comment "URL for a document." ;
+    rdfs:domain bibo:Document ;
+    rdfs:range xsd:anyURI .
+
+cito:cites a owl:ObjectProperty ;
+    rdfs:label "cites" ;
+    rdfs:comment "Indicates that one document cites another document." ;
+    rdfs:domain bibo:Document ;
+    rdfs:range bibo:Document .
+
+swrc:author a owl:ObjectProperty ;
+    rdfs:label "author" ;
+    rdfs:comment "Author of the publication." ;
+    rdfs:domain swrc:Publication ;
+    rdfs:range foaf:Person .
+
+swrc:presentedAt a owl:ObjectProperty ;
+    rdfs:label "presented at" ;
+    rdfs:comment "The conference at which the publication was presented." ;
+    rdfs:domain swrc:Publication ;
+    rdfs:range swrc:Conference .
+
+swrc:publishedIn a owl:ObjectProperty ;
+    rdfs:label "published in" ;
+    rdfs:comment "The journal in which the publication is published." ;
+    rdfs:domain swrc:Publication ;
+    rdfs:range swrc:Journal .
+
+foaf:member a owl:ObjectProperty ;
+    rdfs:label "member" ;
+    rdfs:comment "A member of an organization." ;
+    rdfs:domain foaf:Organization ;
+    rdfs:range foaf:Person .
+
+foaf:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:comment "A name for some thing." ;
+    rdfs:domain foaf:Person ;
+    rdfs:range rdfs:Literal .
+
+<https://github.com/wAIlma/SLR-NeSyAI-KGC-I40/blob/main/schema> a owl:Ontology ;
+    dcterms:creator "Diego Rincon-Yanez",
+        "Wilma Schmidt" ;
+    dcterms:description """This ontology is designed to represent research papers and the relationships between authors, journals, and conferences. It integrates the following ontologies: 
+- Bibliographic Ontology (BIBO): to describe bibliographic information such as titles, authors, and publishers.
+- Citation Typing Ontology (CITO): to describe the nature of citations between research papers.
+- Semantic Web Research Community (SWRC) ontology: to represent the structure and metadata of scientific publications, including authors and institutions.
+- Open Research Knowledge Graph (ORKG) ontology: to model research problems, contributions, and research works.
+The ontology enables detailed representation and querying of scholarly communication, including author affiliations, publication venues, citation types, and research contributions.""" ;
+    dcterms:language "en" ;
+    dcterms:title "Research Publications Ontology" ;
+    rdfs:comment "This ontology integrates the Bibliographic Ontology (BIBO), Citation Typing Ontology (CITO), Semantic Web Research Community (SWRC) ontology,and Open Research Knowledge Graph (ORKG) ontologyto represent research papers, the relationships between authors, journals, and conferences." ;
+    owl:versionInfo "3.5" .
+
+orkg:ResearchField a owl:Class ;
+    rdfs:label "Research Field" ;
+    rdfs:comment "A field of study related to research." .
+
+swrc:Conference a owl:Class ;
+    rdfs:label "Conference" ;
+    rdfs:comment "A conference event." .
+
+swrc:Journal a owl:Class ;
+    rdfs:label "Journal" ;
+    rdfs:comment "A periodical containing scholarly articles." .
+
+foaf:Organization a owl:Class ;
+    rdfs:label "Organization" ;
+    rdfs:comment "An organization such as a company or institution." .
+
+orkg:Paper a owl:Class ;
+    rdfs:label "Research Paper" ;
+    rdfs:comment "A research paper." .
+
+orkg:ResearchContribution a owl:Class ;
+    rdfs:label "Research Contribution" ;
+    rdfs:comment "A contribution to the research.",
+        "The research contribution of the paper." ;
+    rdfs:subClassOf orkg:ResearchMethod ;
+    owl:withRestrictions orkg:ResearchMethod .
+
+orkg:ResearchMethod a owl:Class ;
+    rdfs:label "Research Method" ;
+    rdfs:comment "A method used to acomplish the research results." .
+
+swrc:Publication a owl:Class ;
+    rdfs:label "Publication" ;
+    rdfs:comment "A scientific publication." ;
+    owl:equivalentClass orkg:Paper,
+        bibo:Document .
+
+foaf:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:comment "A person." .
+
+bibo:Document a owl:Class ;
+    rdfs:label "Document" ;
+    rdfs:comment "Any written or printed work." .
+

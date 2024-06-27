@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Journal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Journal</rdfs:label>
+    <rdfs:comment>A periodical containing scholarly articles.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#publishedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>published in</rdfs:label>
+    <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
+    <rdfs:range rdf:resource="http://swrc.ontoware.org/ontology#Journal"/>
+    <rdfs:comment>The journal in which the publication is published.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>name</rdfs:label>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment>A name for some thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#presentedAt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>presented at</rdfs:label>
+    <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
+    <rdfs:range rdf:resource="http://swrc.ontoware.org/ontology#Conference"/>
+    <rdfs:comment>The conference at which the publication was presented.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/abstract">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>abstract</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment>Abstract of a document.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/Document">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Document</rdfs:label>
+    <rdfs:comment>Any written or printed work.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/member">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>member</rdfs:label>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:comment>A member of an organization.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://orkg.org/coreResearchContribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Research Contribution</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://orkg.org/coreResearchMethod"/>
+    <rdfs:comment>A contribution to the research.</rdfs:comment>
+    <rdfs:comment>The research contribution of the paper.</rdfs:comment>
+    <owl:withRestrictions rdf:resource="http://orkg.org/coreResearchMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/url">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>URL</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:comment>URL for a document.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/cito/cites">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>cites</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:range rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:comment>Indicates that one document cites another document.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://orkg.org/coreResearchField">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Research Field</rdfs:label>
+    <rdfs:comment>A field of study related to research.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/issued">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>issued</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:comment>Date of formal issuance (e.g., publication) of the resource.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://orkg.org/corehasResearchContribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>hasResearchContribution</rdfs:label>
+    <rdfs:domain rdf:resource="http://orkg.org/corePaper"/>
+    <rdfs:range rdf:resource="http://orkg.org/coreResearchContribution"/>
+    <owl:withRestrictions rdf:resource="http://orkg.org/coreResearchContribution"/>
+    <rdfs:comment>The research contribution of the paper.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://orkg.org/coreemploys">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>employs</rdfs:label>
+    <rdfs:domain rdf:resource="http://orkg.org/coreResearchContribution"/>
+    <rdfs:range rdf:resource="http://orkg.org/coreResearchMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://orkg.org/corePaper">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Research Paper</rdfs:label>
+    <rdfs:comment>A research paper.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>title</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment>A name given to the resource.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#author">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>author</rdfs:label>
+    <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:comment>Author of the publication.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Publication">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Publication</rdfs:label>
+    <rdfs:comment>A scientific publication.</rdfs:comment>
+    <owl:equivalentClass rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <owl:equivalentClass rdf:resource="http://orkg.org/corePaper"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://orkg.org/corehasResearchField">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>hasResearchField</rdfs:label>
+    <rdfs:domain rdf:resource="http://orkg.org/corePaper"/>
+    <rdfs:range rdf:resource="http://orkg.org/coreResearchField"/>
+    <rdfs:comment>The research field of the paper.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Person</rdfs:label>
+    <rdfs:comment>A person.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/doi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>DOI</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment>Digital Object Identifier for a document.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://github.com/wAIlma/SLR-NeSyAI-KGC-I40/blob/main/schema">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionInfo>3.5</owl:versionInfo>
+    <dcterms:creator>Diego Rincon-Yanez</dcterms:creator>
+    <dcterms:creator>Wilma Schmidt</dcterms:creator>
+    <dcterms:language>en</dcterms:language>
+    <rdfs:comment>This ontology integrates the Bibliographic Ontology (BIBO), Citation Typing Ontology (CITO), Semantic Web Research Community (SWRC) ontology,and Open Research Knowledge Graph (ORKG) ontologyto represent research papers, the relationships between authors, journals, and conferences.</rdfs:comment>
+    <dcterms:description>This ontology is designed to represent research papers and the relationships between authors, journals, and conferences. It integrates the following ontologies: 
+- Bibliographic Ontology (BIBO): to describe bibliographic information such as titles, authors, and publishers.
+- Citation Typing Ontology (CITO): to describe the nature of citations between research papers.
+- Semantic Web Research Community (SWRC) ontology: to represent the structure and metadata of scientific publications, including authors and institutions.
+- Open Research Knowledge Graph (ORKG) ontology: to model research problems, contributions, and research works.
+The ontology enables detailed representation and querying of scholarly communication, including author affiliations, publication venues, citation types, and research contributions.</dcterms:description>
+    <dcterms:title>Research Publications Ontology</dcterms:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Organization</rdfs:label>
+    <rdfs:comment>An organization such as a company or institution.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://orkg.org/coreResearchMethod">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Research Method</rdfs:label>
+    <rdfs:comment>A method used to acomplish the research results.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Conference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Conference</rdfs:label>
+    <rdfs:comment>A conference event.</rdfs:comment>
+  </rdf:Description>
+</rdf:RDF>
