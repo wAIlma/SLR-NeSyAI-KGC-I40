@@ -9,11 +9,12 @@
   - [Troubleshooting](#troubleshooting)
 
 ## Overview
+
 This repository contains all the artifacts, data, and scripts related to the systematic literature review (SLR) on Knowledge Graph Construction using Neuro-Symbolic AI focused on manufacturing use cases. 
 
 The main question to guide this review is, “*Which role play neuro-symbolic AI approaches in knowledge graph construction for Manufacturing?*"
 
-Originally, **981** obtained search results, and **53** remained after applying inclusion and exclusion criteria during the screening process. Additional **four** reports were excluded based on quality criteria, of which **three** because of the publishing venue's low ranking. The remaining **49** reports result in **5%** of the overall search corpus. This is reasonable as the focus of neuro-symbolic approaches is not specified in our search query, and a resulting lower precision is expected.
+Originally, **981** obtained search results, and **53** remained after applying inclusion and exclusion criteria during the screening process. Additional **four** reports were excluded based on quality criteria, of which **three** because of the publishing venue's low ranking. The remaining **49** reports result in **5%** of the overall search corpus. This is reasonable as the focus of neuro-symbolic approaches is not specified in our search query, and a resulting lower precision is expected. The image represents the protocol following the [PRISM](https://www.prisma-statement.org/prisma-2020-flow-diagram) screening process.
 
 <p align="center">
   <img src="./images/prisma.png" alt="Experimentation Scenario"/>
