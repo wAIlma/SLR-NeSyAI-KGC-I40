@@ -1,0 +1,7 @@
+PREFIX orkg: <http://orkg.org/core/>
+
+SELECT ?researchField ?paper
+WHERE {
+    ?paper a orkg:Paper .
+    ?paper orkg:hasResearchField ?researchField .
+}

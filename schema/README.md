@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains the ontology schema used for organizing and representing research papers in the systematic literature review (SLR) on [Topic]. The schema leverages the Bibliographic Ontology (BIBO), Citation Typing Ontology (CITO), Semantic Web for Research Communities (SWRC), and Open Research Knowledge Graph (ORKG) ontologies.
+This directory contains the ontology schema used for organizing and representing research papers in the systematic literature review (SLR) on Knowledge Graph Construction using Neuro-Symbolic AI approaches. The schema leverages the Bibliographic Ontology (BIBO), Citation Typing Ontology (CITO), Semantic Web for Research Communities (SWRC), and Open Research Knowledge Graph (ORKG) ontologies.
 
 <p align="center">
   <img src="./ontology.svg" alt="Ontology"/>
@@ -34,6 +34,15 @@ By integrating BIBO, CITO, SWRC, and ORKG, this schema provides a comprehensive 
 
 ## Usage
 
+To use this ontology, follow these steps:
+
+1. Download or clone this repository.
+2. Import [`ontology.ttl`](ontology.ttl) or [`ontology.rdf`](ontology.rdf) into your ontology editor or application.
+3. Start using the defined classes and properties in your ontology modeling or data.
+
+**Documentation:**
+   - Refer to [structure](structure.md) for detailed explanations of each ontology component, their relationships, and examples of usage.
+
 You can use this ontology by importing ontology.rdf into your application. Also you can import  Ontology into your project using the following namespace:
 
 ```turtle
@@ -48,7 +57,5 @@ You can use this ontology by importing ontology.rdf into your application. Also 
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 ```
 
-**Documentation:**
-   - Refer to `structure.md` for detailed explanations of each ontology component, their relationships, and examples of usage.
 
 

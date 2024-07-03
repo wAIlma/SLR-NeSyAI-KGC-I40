@@ -1,0 +1,8 @@
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+
+SELECT ?paper ?doi ?url
+WHERE {
+    ?paper a bibo:Document .
+    OPTIONAL { ?paper bibo:doi ?doi . }
+    OPTIONAL { ?paper bibo:url ?url . }
+}

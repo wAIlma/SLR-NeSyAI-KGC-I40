@@ -1,0 +1,8 @@
+PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+
+SELECT ?paper ?journal
+WHERE {
+    ?paper a swrc:Publication .
+    ?paper swrc:publishedIn ?journal .
+    ?journal a swrc:Journal .
+}

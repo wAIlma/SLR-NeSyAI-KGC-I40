@@ -1,3 +1,4 @@
 *commit.cmd
-data/*
-kg/*
+data/*.csv
+knowledgegraph/query_naturallanguage.py
+knowledgegraph/mapping.ttl
